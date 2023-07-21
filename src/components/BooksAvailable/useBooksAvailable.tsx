@@ -1,20 +1,31 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
+import { HowManyBooksAre } from "@typesFiles/General"
 
-const singularBaseText = " Libro disponible: ";
-const pluralBaseText = " Libros disponibles: ";
+const singularBaseBookText = " Libro disponible: "
+const pluralBaseBookText = " Libros disponibles: "
+const singularBaseReadingListText = " Libro en la lista de lectura"
+const pluralBaseReadingListText = " Libros en la lista de lectura"
 
-export function useBooksAvailable(numberOfBooks : number) {
-  const [textToReturn, setTextToReturn] = useState("");
+export function useBooksAvailable(numberOfBooks : HowManyBooksAre) {
+  const [textForBooks, setTextForBooks] = useState("");
+  const [textForReadingList, setTextForReadingList] = useState("");
 
   useEffect(() => {
-    if (numberOfBooks === 1) {
-      setTextToReturn(`${numberOfBooks} ${singularBaseText}`)
-      return;
+    if (numberOfBooks.numberOfAvailableBooks === 1) {
+      setTextForBooks(`${numberOfBooks.numberOfAvailableBooks} ${singularBaseBookText}`)
+    } else {
+      setTextForBooks(`${numberOfBooks.numberOfAvailableBooks} ${pluralBaseBookText}`);
     }
-    setTextToReturn(`${numberOfBooks} ${pluralBaseText}`);
+
+    if (numberOfBooks.numberOfBooksInReadingList === 1) {
+      setTextForReadingList(`${numberOfBooks.numberOfBooksInReadingList} ${singularBaseReadingListText}`)
+    } else {
+      setTextForReadingList(`${numberOfBooks.numberOfBooksInReadingList} ${pluralBaseReadingListText}`);
+    }
   }, [numberOfBooks]);
 
   return {
-    textToReturn
+    textForBooks,
+    textForReadingList
   };
 }

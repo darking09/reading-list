@@ -15,6 +15,7 @@
 			"typescript"
 		],
     "cSpell.words": [
+      "supabase",
       "WORDPRESS"
     ],
     "typescript.tsdk": "node_modules/typescript/lib"

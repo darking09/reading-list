@@ -1,4 +1,5 @@
 'use client'
+import { Genre } from '@typesFiles/Genres'
 import useGenresFilter from './useFilterByGenres'
 import { GenresFilterProps } from '@typesFiles/props/genresFilter'
 export default function FilterByGenres({ genres } : GenresFilterProps) {
@@ -8,8 +9,8 @@ export default function FilterByGenres({ genres } : GenresFilterProps) {
     <div className="flex flex-row p-2">
       <select name="genresFilter" id="genresFilter" onChange={onChange} >
         {
-          genres.map((g : string, index : number) => (
-            <option value={g} key={index}>{g}</option>
+          genres.map((g : Genre) => (
+            <option value={g.id} key={g.id}>{g.name}</option>
           ))
         }
       </select>

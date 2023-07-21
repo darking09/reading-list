@@ -6,12 +6,12 @@ import ReadingListGalleryWrapper from '@components/ReadingListGalleryWrapper';
 export default function ReadingListGallery({ books }: ReadingListGalleryProps) {
   return (
     <section className="text-gray-600 body-font row-span-2 col-span-1">
-      <h2>Lista de lectura</h2>
+      <h3>Lista de lectura</h3>
       <div className="grid grid-flow-row-dense grid-cols-1 gap-6 md:grid-cols-2 p-4">
         {
           books.map((b : BookType) => (
-            <ReadingListGalleryWrapper book={b} key={b.book.ISBN}>
-              <Book bookContainer={b} />
+            <ReadingListGalleryWrapper book={b} key={b.ISBN}>
+              <Book book={b} />
             </ReadingListGalleryWrapper>
           ))
         }

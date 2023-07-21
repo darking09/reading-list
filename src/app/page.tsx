@@ -5,7 +5,7 @@ import FilterByPages from "@components/FilterByPages"
 import ReadingListGallery from "@components/ReadingListGallery"
 
 import {
-  getHowManyBooksAreThereAvailable,
+  getHowManyBooksAre,
   getGenres,
   getMaxAndMinPages,
   getReadingListBooks,
@@ -13,7 +13,7 @@ import {
 } from "@api/index"
 
 export default async function Home() {
-  const numberOfBooks = await getHowManyBooksAreThereAvailable()
+  const numberOfBooks = await getHowManyBooksAre()
   const genres = await getGenres()
   const { maxPage, minPage } = await getMaxAndMinPages()
   const books = await getBooks()

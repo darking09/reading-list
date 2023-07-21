@@ -3,11 +3,12 @@ import { BooksAvailableProps } from '@typesFiles/props/booksAvailable'
 import { useBooksAvailable } from './useBooksAvailable'
 
 export default function BooksAvailable ({ numberOfBooks } : BooksAvailableProps) {
-  const { textToReturn } = useBooksAvailable(numberOfBooks);
+  const { textForBooks, textForReadingList } = useBooksAvailable(numberOfBooks);
 
   return (
-    <div className="flex flex-row p-2">
-      {textToReturn}
+    <div className="grid grid-rows-2 p-2">
+      <h1 className='row-span-1'>{textForBooks}</h1>
+      <h2>{textForReadingList}</h2>
     </div>
   )
 }

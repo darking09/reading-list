@@ -1,15 +1,15 @@
 export type Book = {
-  book: {
-    title: string;
-    pages: number;
-    genre: string;
-    cover: string;
-    synopsis: string;
-    year: number;
-    ISBN: string;
-    author: Author;
-    available?: boolean;
-  }
+  id: number;
+  title: string;
+  pages: number;
+  genre_id: string;
+  cover: string;
+  synopsis: string;
+  year: number;
+  ISBN: string;
+  author_id: Author;
+  is_available: boolean;
+  created_at: Date;
 }
 
 export type Author = {
@@ -22,8 +22,6 @@ export type Books = Array<Book>
 export type BookAPI = {
   library: Books;
 }
-
-export type Genres = Array<string>
 
 export type MaxAndMinPages = {
   maxPage: number;

@@ -1,5 +1,7 @@
+import { Genres } from '@typesFiles/Genres'
+
 export type GenresFilterProps = {
-  genres: Array<string>
+  genres: Genres
   onGenreChange?: (genre: string) => void
   selectedGenre?: string
 }
