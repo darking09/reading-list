@@ -1,7 +1,7 @@
 import { Genres } from '@typesFiles/Genres'
+import { Books } from '@typesFiles/Books'
 
 export type GenresFilterProps = {
   genres: Genres
-  onGenreChange?: (genre: string) => void
-  selectedGenre?: string
+  books: Books
 }

@@ -12,7 +12,7 @@ const LibraryContext = createContext({
   maxAndMinPages: {} as MaxAndMinPages,
   addBooksToReadingList: (book : Book) => {},
   removeBooksFromReadingList: (book: Book) => {},
-  filterBooks: (filter: string) => {},
+  filterBooks: (value: number, filterType : string) => {},
 })
 
 export default LibraryContext

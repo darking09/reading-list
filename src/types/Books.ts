@@ -2,7 +2,7 @@ export type Book = {
   id: number;
   title: string;
   pages: number;
-  genre_id: string;
+  genre_id: number;
   cover: string;
   synopsis: string;
   year: number;

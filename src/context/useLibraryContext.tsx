@@ -3,6 +3,7 @@ import { Books, Book, MaxAndMinPages } from '@typesFiles/Books'
 import { Genres } from '@typesFiles/Genres'
 import { HowManyBooksAre } from '@typesFiles/General'
 import * as api from '@api/index'
+import { FILTER_TYPES } from '@utils/index';
 
 export default function useLibraryContext() {
   const [books, setBooks] = useState<Books>([])
@@ -101,7 +102,13 @@ export default function useLibraryContext() {
     await api.removeFromReadingList(book)
   }
 
-  const filterBooks = async (filter: string) => {
+  const filterBooks = async (value: number, filterType: string) => {
+    const books = await api.getBooks()
+
+    if (filterType === FILTER_TYPES.GENRES) {
+      setBooks(books.filter(b => b.genre_id === value))
+    }
+
   }
 
   return {
