@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Josefin_Sans as Sans } from 'next/font/google'
 import LibraryProvider from '@context/LibraryProvider'
+import Toaster from '@components/Toaster'
 
 const sans = Sans({
   subsets: ['latin'],
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={sans.className}>
         <LibraryProvider>
           {children}
+          <Toaster />
         </LibraryProvider>
       </body>
     </html>

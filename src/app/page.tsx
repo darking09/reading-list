@@ -23,7 +23,7 @@ export default function Home() {
           <BooksAvailable numberOfBooks={howManyBooksAre} />
         </section>
         <section className="row-span-2 col-span-1">
-          <FilterByGenres genres={genres} books={books} />
+          <FilterByGenres genres={genres} />
           <FilterByPages maxPage={maxAndMinPages.maxPage} minPage={maxAndMinPages.minPage} />
         </section>
       </header>
