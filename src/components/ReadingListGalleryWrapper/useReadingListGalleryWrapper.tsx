@@ -1,13 +1,14 @@
 import { useTransition } from "react";
 import { Book } from '@typesFiles/Books'
-import { removeFromReadingList } from "@api/index"
+import useAppContext from "@context/useAppContext"
 
 export default function useReadingListGalleryWrapper(book : Book) {
+  const { removeBooksFromReadingList } = useAppContext()
   let [isPending, startTransition] = useTransition()
 
   const onClick = () => {
     book.is_available = true
-    startTransition(() => removeFromReadingList(book))
+    removeBooksFromReadingList(book)
   }
   return {
     onClick

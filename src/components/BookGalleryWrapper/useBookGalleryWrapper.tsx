@@ -1,9 +1,9 @@
-import { useState, useEffect, useTransition } from "react";
+import { useState, useEffect } from "react";
 import { Book } from '@typesFiles/Books'
-import { addToReadingList } from "@api/index"
+import useAppContext from "@context/useAppContext"
 
 export default function useBookGalleryWrapper(book: Book) {
-  let [isPending, startTransition] = useTransition()
+  const { addBooksToReadingList } = useAppContext()
   useEffect(() => {
     setIsAvailable(checkIsAvailability(book));
   }, [book]);
@@ -21,8 +21,7 @@ export default function useBookGalleryWrapper(book: Book) {
 
   const onClick = () => {
     book.is_available = false
-
-    startTransition(() => addToReadingList(book))
+    addBooksToReadingList(book)
   }
 
   return {

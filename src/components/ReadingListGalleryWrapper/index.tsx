@@ -7,7 +7,7 @@ export default function ReadingListGalleryWrapper({ children, book }: BookGaller
   const { onClick } = useReadingListGalleryWrapper(book)
 
   return (
-    <div>
+    <div >
       <CloseButton onClick={onClick} />
       {children}
     </div>

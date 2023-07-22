@@ -30,7 +30,7 @@ export const getHowManyBooksAre = async () : Promise<HowManyBooksAre> => {
       numberOfBooksInReadingList: 0
     }
   }
-  console.log(readingList)
+
   const numberOfBooksInReadingList = await supabase
     .rpc('count_books_in_reading_list', {
       reading_list: readingList?.data?.[0].id

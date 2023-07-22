@@ -6,8 +6,11 @@ export default function FilterByGenres({ genres } : GenresFilterProps) {
   const { currentGenres, onChange } = useGenresFilter()
 
   return (
-    <div className="flex flex-row p-2">
-      <select name="genresFilter" id="genresFilter" onChange={onChange} >
+    <div className="form-control w-full max-w-xs">
+      <label className="label">
+        <span className="label-text">Filtro por genero</span>
+      </label>
+      <select name="genresFilter" id="genresFilter" onChange={onChange} className="select select-bordered w-full max-w-xs">
         {
           genres.map((g : Genre) => (
             <option value={g.id} key={g.id}>{g.name}</option>
