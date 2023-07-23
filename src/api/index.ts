@@ -1,4 +1,3 @@
-'use server'
 import { Books, Book, MaxAndMinPages } from '@typesFiles/Books'
 import { HowManyBooksAre } from '@typesFiles/General'
 import { Genres } from '@typesFiles/Genres'

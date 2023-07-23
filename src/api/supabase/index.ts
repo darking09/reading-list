@@ -1,9 +1,10 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
-const {
-  NEXT_PUBLIC_SUPABASE_URL='',
-  SUPABASE_SERVICE_ROLE_KEY=''
-} = process.env
 
 // Create a single supabase client for interacting with your database
-export const supabase = createClient(NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
+export const supabase = createClientComponentClient()
+
+export const revalidateObject = {
+  revalidateOnFocus: false,
+  revalidateOnReconnect: false,
+}
