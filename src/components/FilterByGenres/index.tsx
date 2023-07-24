@@ -1,12 +1,11 @@
-'use client'
 import { Genre } from '@typesFiles/Genres'
 import useGenresFilter from './useFilterByGenres'
 import { GenresFilterProps } from '@typesFiles/props/genresFilter'
 export default function FilterByGenres({ genres } : GenresFilterProps) {
-  const { currentGenres, onChange } = useGenresFilter()
+  const { onChange } = useGenresFilter()
 
   return (
-    <div className="form-control w-full max-w-xs">
+    <div className="col-span-1 row-span-1">
       <label className="label">
         <span className="label-text"></span>
       </label>

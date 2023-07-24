@@ -1,4 +1,3 @@
-'use client'
 import { FilterByPagesProps } from '@typesFiles/props/filterByPages'
 import useFilterByPages from './useFilterByPages'
 
@@ -6,7 +5,7 @@ export default function FilterByPages({ maxPage, minPage } : FilterByPagesProps)
   const { currentPages, onChange, onMouseUp } = useFilterByPages(maxPage)
 
   return (
-    <div className="form-control w-full max-w-xs">
+    <div className="col-span-1 row-span-1">
       <label className="label">
         <span className="label-text">Filtro por páginas ({currentPages} Pág.)</span>
       </label>
