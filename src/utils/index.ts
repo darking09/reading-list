@@ -4,8 +4,8 @@ export const FILTER_TYPES = Object.freeze({
 })
 
 export const DEFAULT_FILTERS = Object.freeze({
-  pages: 0,
-  genres: 0,
+  pages: -1,
+  genres: -1,
 })
 
 export const DEFAULT_HOW_MANY_BOOKS_ARE = Object.freeze({

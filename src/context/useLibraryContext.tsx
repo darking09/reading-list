@@ -152,11 +152,15 @@ export default function useLibraryContext() {
    */
   const filter = (newFilter : Filters, currentBooks : Books) => {
     return currentBooks.filter((b : Book) => {
-      if (newFilter.genres === 0) {
+      if (newFilter.genres === 0 && newFilter.pages < 0) {
+        return true
+      }
+
+      if (newFilter.genres <= 0) {
         return b.pages <= newFilter.pages
       }
 
-      if (newFilter.pages === 0) {
+      if (newFilter.pages < 0) {
         return b.genre_id === newFilter.genres
       }
 
