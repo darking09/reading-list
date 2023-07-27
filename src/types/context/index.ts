@@ -1,5 +1,6 @@
 import { Books, MaxAndMinPages } from '@typesFiles/Books'
-import { Genres } from '@typesFiles/Genres'
+import { Genres  } from '@typesFiles/Genres'
+import { FilterType } from '@typesFiles/General'
 
 export type LibraryContextType = {
   books: Books,
@@ -8,5 +9,5 @@ export type LibraryContextType = {
   maxAndMinPages: MaxAndMinPages,
   addBooksToReadingList: (books: Books) => void,
   removeBooksFromReadingList: (books: Books) => void,
-  filterBooks: (filter: string) => void,
+  filterBooks: (value: number, filterType : FilterType) => void,
 }
