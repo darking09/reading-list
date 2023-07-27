@@ -1,7 +1,6 @@
-import Image from 'next/image'
 import { AccordionWrapperProps } from '@typesFiles/props/accordionWrapper'
 import { AccordionItem } from '@szhsin/react-accordion'
-import chevron from '@assets/chevron-down.svg'
+import ChevronDown from '@components/ChevronDown'
 
 export default function AccordionItemWrapper({ children, title, ...rest }: AccordionWrapperProps) {
   return (
@@ -10,12 +9,10 @@ export default function AccordionItemWrapper({ children, title, ...rest }: Accor
       header={({ state: { isEnter } }) => (
         <>
           {title}
-          <Image
+          <ChevronDown
             className={`ml-auto transition-transform duration-200 ease-out ${
               isEnter && "rotate-180"
             }`}
-            src={chevron}
-            alt="Chevron"
           />
         </>
       )}
